@@ -1,115 +1,124 @@
-# SpringBoot
+# Spring Boot
 
-## Introduction to SpringBoot
-***Basically it's an open source framework designed to facilitate the creation of Java-based applications.***
+## Introduction to Spring Boot
+Spring Boot is an open-source framework designed to facilitate the creation of Java-based applications.
 
-**First question: What is Spring?**
+## What is Spring?
 
-It's a project Eco-System, which makes to program in Java more easier, fast and secure to the community. 
+Spring is a project ecosystem that makes Java programming easier, faster, and more secure for the development community.
 
-**Principal Sub-projects:**
+## Principal Sub-projects
 
-**SpringBoot:** It's a Sub-Project of Spring that simplifies the creation process of applications based on Spring. It allows a default configuration to start new Spring projects faster without the need of extended manual configurations.
+### Spring Boot
+A sub-project of Spring that simplifies the creation process of Spring-based applications. It provides default configurations to start new Spring projects quickly without extensive manual configuration.
 
-**SpringData:** It allows an easier coding to the access of data in different data warehouses including relational data base and not relational. The objective is to facilitate the implementation of repositories and data services.
+### Spring Data
+Facilitates data access across different data stores, including both relational and non-relational databases. Its primary objective is to simplify the implementation of repositories and data services.
 
-**SpringCloud:** Is a set of tools to create distributed systems and micro-services based applications. It allows solutions to the distributed settings, service discovery, circuit breakers, load balancing and more...
+### Spring Cloud
+A comprehensive toolkit for building distributed systems and microservice-based applications. It provides solutions for distributed configuration, service discovery, circuit breakers, load balancing, and more.
 
-**SpringSecurity:** It's an authentication framework and a access control to Spring based applications. It allows protection to common attacks, such as: Impersonation (CSRF), brute force attacks, and more. Ensuring that the applications are secure.
+### Spring Security
+An authentication and access control framework for Spring-based applications. It provides protection against common security threats, including Cross-Site Request Forgery (CSRF), brute force attacks, and more, ensuring application security.
 
-**SpringBatch:** It allows a robust solution to the batch processing. Ideal to develop applications that manage with large volumes of data, like data migrations and transaction processing.
+### Spring Batch
+Provides robust solutions for batch processing. It is ideal for applications that handle large volumes of data, such as data migrations and transaction processing.
 
-**SpringWebServices:** It allows the creation of web services of contract first and the interoperability of SOAP Web Services. It allows the endpoint creations and SOAP clients in a efficient and easy way.
+### Spring Web Services
+Enables the creation of contract-first web services and SOAP Web Services interoperability. It simplifies the creation of endpoints and SOAP clients efficiently.
 
-## What is NOT SpringBoot?
+## What Spring Boot is Not
 
-SpringBoot is not a Spring framework replacement. It is based on this framework to allow a set of libraries and API's that facilitated a lot the Spring develop
+Spring Boot is not a replacement for the Spring Framework. Rather, it is built on top of Spring Framework to provide a set of libraries and APIs that significantly simplify Spring development.
 
-## SpringBoot Starter
+## Spring Boot Starters
 
-An starter in SpringBoot is a dependency preconfigured which simplifies the addition of certain functionalities to the Spring applications. This starters contain a set of automatic dependencies that are designed to work together and allow an specific functionality, this dependencies are imported in a **"pom.xml"** file and it is structured like this: 
+A Spring Boot starter is a pre-configured dependency that simplifies the addition of specific functionalities to Spring applications. These starters contain sets of automated dependencies designed to work together and enable specific functionality. These dependencies are imported in a `pom.xml` file and are structured as follows:
 
-* pom.xml:
-* starter A
-* starter B
-* starter C
+```xml
+<!-- pom.xml -->
+<dependencies>
+    <!-- starter A -->
+    <!-- starter B -->
+    <!-- starter C -->
+</dependencies>
+```
 
 ### Web Starter
 
-* **Spring-boot-starter-web:** This includes all the necesary dependencies to develop web applications, including Spring MVC, Tomcat as a embedded server.
+The `spring-boot-starter-web` includes all necessary dependencies to develop web applications, including Spring MVC and embedded Tomcat server.
 
-## What is a annotation in Java?
+## Java Annotations
 
-* An annotation is a metadata form that allows data over a program but it's not part of the program. The annotations in Java doesn't affect directly the operation of the applied code.
+An annotation in Java is a form of metadata that provides information about a program but is not part of the program itself. Java annotations do not directly affect the operation of the code they annotate.
 
-* Are used to allow information to the tools and libraries that will be executed at compile time, deployment time and execution time.
+Annotations provide information to tools and libraries that process the code at compile time, deployment time, and runtime.
 
-### Initial annotations
+### Core Spring Boot Annotations
 
-* **@SpringBootConfiguration:** Is an annotation in Spring Boot that marks a class as the main source of configuration for a Spring Boot application.
+- **@SpringBootConfiguration**: Marks a class as the main source of configuration for a Spring Boot application.
 
-* **@EnableAutoConfiguration:** Is a Spring Boot annotation that automatically configures your application based on the dependencies present in the classpath.
+- **@EnableAutoConfiguration**: Enables Spring Boot to automatically configure your application based on the dependencies present in the classpath.
 
-* **@ComponentScan:** Is a Spring annotation that tells Spring where to look for components, configurations, and services to automatically register them as beans.
+- **@ComponentScan**: Tells Spring where to look for components, configurations, and services to automatically register them as beans.
 
-## Bean
+## Spring Beans
 
-A "bean" is an object that is managed by the Inversion of Control container (IoC), beans are the central components in a Spring application that represents objects that are created, cofigured and assembled between the Spring container.
+A bean is an object managed by the Spring Inversion of Control (IoC) container. Beans are the central components in a Spring application, representing objects that are created, configured, and assembled by the Spring container.
 
-### Bean features
+### Bean Features
 
-* Management and automatically creation
-* Dependency injection 
-* Controled life cicle 
+- Automatic creation and management
+- Dependency injection
+- Controlled lifecycle
 
-### How to define a Bean 
+### Defining Beans
 
-* Using @Component annotation
-* Using @Bean annotation in a configuration class
+Beans can be defined in two primary ways:
+1. Using the `@Component` annotation
+2. Using the `@Bean` annotation in a configuration class
 
-## Spring MVC
-***Model, View and Controller***
+## Spring MVC (Model-View-Controller)
 
-Is a framework within Spring that follows the Model-View-Controller (MVC) pattern to build web applications by separating the business logic, user interface, and control flow.
+Spring MVC is a framework within Spring that implements the Model-View-Controller pattern to build web applications. It separates the application into three main components: business logic, user interface, and control flow.
 
 ### Spring MVC Flow
 ![alt text](image.png)
 
-### Spring MVC Layers
+### Spring MVC Architecture
 
-####  Presentation Layer(Controller, View, Model)
-* **Controller:** Manages the user requests, interacts with the Business Layer and selects the proper view to return to the user. Acts like an intermediary between the view and the model.
-* **View:** Is responsible to show the data to the user.
-* **Model:** It represents the application data and the business logic. En Spring MVC it normally is POJO objects(Plain Old Java Object), that contains data and methods to manipulate this data.
+#### 1. Presentation Layer (MVC Components)
+- **Controller**: Manages user requests, interacts with the Business Layer, and selects the appropriate view to return to the user. Acts as an intermediary between the view and model.
+- **View**: Responsible for presenting data to the user.
+- **Model**: Represents the application data and business logic. In Spring MVC, models are typically Plain Old Java Objects (POJOs) that contain data and methods to manipulate that data.
 
-#### Business Layer(Service)
-***Here it is where it's implemented the rules and specific process of the domain of the App.***
-* **@Service:** The @Service annotation it is used to mark a class like a service component. 
+#### 2. Business Layer (Service)
+The business layer implements the domain-specific rules and processes of the application.
+- **@Service**: Annotation used to mark a class as a service component.
 
-#### Access Layer(repository)
-***This layer is the responsible to interact with the data base or any other file storage. Includes the logic to obtain, store and manipulate data.***
-* **@Repository:** It can be used to mark a class like a data access component.
-* This layer its in charge of the CRUD operations in the data base.
+#### 3. Data Access Layer (Repository)
+This layer is responsible for interacting with databases and other storage systems.
+- **@Repository**: Annotation used to mark a class as a data access component.
+- Handles CRUD (Create, Read, Update, Delete) operations in the database.
 
 ### Spring MVC graphic
 ![alt text](image-1.png)
 
-## Stereotype
-***Are annotations that are used to indicate the role of a component in the architecture of the application.***
+## Spring Stereotypes
 
-This annotations not only mark a class like a Bean(that is managed by the Spring container), it also gave additional information about the purpose and functionality of the Bean.
+Stereotypes are annotations that indicate the role of a component within the application architecture.
 
-### Most Common stereotypes
-* @Component
-* @Service
-* @Repository
-* @Controller
+These annotations not only mark a class as a Spring-managed bean but also provide additional information about the purpose and functionality of the bean.
 
-Spring defines several stereotypes that are essential for proper functioning and organization of an app.
+### Common Stereotypes
+- **@Component**: Base annotation indicating that a class is a Spring component
+- **@Service**: Indicates that a class is a service layer component
+- **@Repository**: Marks a class as a data access component
+- **@Controller**: Identifies a class as a web controller component
 
-This stereotypes helps Spring to detect automatically and configure beans inside the Spring container.
+Spring defines these stereotypes as essential elements for proper application organization and functionality. They enable Spring to automatically detect and configure beans within the Spring container.
 
-## To search...
-* **Dependecies injection.**
-* **SingleTon Design Pattern.**
+## Further Research Topics
+1. Dependency Injection
+2. Singleton Design Pattern
 
